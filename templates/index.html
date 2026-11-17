@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldCount - Automatic Gold Packet Counter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+<body>
+    <nav class="navbar">
+
+    <div class="logo">
+        GOLDPACKETDETECTION
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">
+            <span>⌂</span>
+            Home
+        </a>
+
+        <a href="#detection">
+            <span>⌕</span>
+            Detection
+        </a>
+        <a href="#how-it-works">
+            <span>⚙</span>
+            How It Works
+        </a>
+
+    </div>
+
+</nav>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <p class="tagline">
+                RT-DETR BASED OBJECT DETECTION
+            </p>
+            <h1>
+                Automatic Gold<br>
+                Packet Counter
+            </h1>
+            <p class="description">
+                Detect and count gold packets automatically
+                using an RT-DETR object detection model.
+            </p>
+        </section>
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="upload-card">
+                <div class="upload-icon">
+                    +
+                </div>
+                <h2>
+                    Upload an Image
+                </h2>
+                <p>
+                    Select an image containing gold packets
+                    to begin detection.
+                </p>
+                <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/jpeg, image/png, image/jpg"
+                    hidden
+                >
+                
+                <label for="imageUpload" class="upload-button" >
+                    Choose Image
+                </label>
+                <p class="upload-info">
+                    Supported formats: JPG, JPEG, PNG<br>
+                    Maximum file size: 10 MB
+                </p>
+            </div>
+        </section>
+    
+<section class="uploaded-section" id="detection">
+            <div class="section-heading">
+                <p class="section-tag"></p>
+                <h2>Uploaded Image</h2>
+                <p>
+                    Preview the original image before running packet detection.
+                </p>
+            </div>
+            <div class="uploaded-image-card">
+                <div id="uploadedPlaceholder">
+                    <span>Upload an image to preview it here</span>
+                </div>
+                <img id="uploadedImage" alt="Uploaded Image">
+            </div>
+            <button class="detect-button" id="detectButton">
+                Detect Packets
+            </button>
+        </section>
+        <!-- Result Section -->
+        <section class="result-section" id="result">
+
+            <div class="section-heading">
+                <p class="section-tag">DETECTION RESULT</p>
+                <h2>Detected Packets</h2>
+                <p>
+                    RT-DETR detected the gold packets and highlighted
+                    them with bounding boxes.
+                </p>
+            </div>
+            <div class="result-container">
+                <!-- Result Image -->
+                <div class="result-image-card">
+                    <div id="resultPlaceholder">
+                        Detection result will appear here
+                    </div>
+                    <img id="resultImage" alt="Detection Result">
+                </div>
+                <!-- Detection Count -->
+                <div class="count-card">
+                    <p class="count-label">
+                        TOTAL PACKETS DETECTED
+                    </p>
+                    <h3 id="packetCount">0</h3>
+                    <p class="status" id="statusText">
+                        Waiting for detection
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="how-it-works" id="how-it-works">
+
+    <div class="section-heading">
+
+        <p class="section-tag">HOW IT WORKS</p>
+
+        <h2>From Image to Detection</h2>
+
+        <p>
+            The system uses an RT-DETR object detection model
+            to automatically identify and count gold packets.
+        </p>
+
+    </div>
+
+
+    <div class="workflow">
+
+        <div class="workflow-card">
+
+            <div class="workflow-icon">
+                01
+            </div>
+
+            <h3>Upload Image</h3>
+
+            <p>
+                Select an image containing gold packets
+                using the upload section.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-card">
+
+            <div class="workflow-icon">
+                02
+            </div>
+
+            <h3>RT-DETR Detection</h3>
+
+            <p>
+                The trained RT-DETR model processes the image
+                and detects individual gold packets.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-card">
+
+            <div class="workflow-icon">
+                03
+            </div>
+
+            <h3>Count & Display</h3>
+
+            <p>
+                Detected packets are counted and highlighted
+                with bounding boxes in the result image.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- RT-DETR Explanation -->
+
+    <div class="rtdetr-info">
+
+        <div class="rtdetr-content">
+
+            <p class="section-tag">RT-DETR</p>
+
+            <h2>How RT-DETR Works</h2>
+
+            <p>
+                RT-DETR is a real-time object detection model
+                designed to detect objects efficiently without
+                requiring traditional Non-Maximum Suppression.
+            </p>
+
+            <p>
+                In this project, the trained RT-DETR model receives
+                the uploaded image, extracts important visual
+                features, identifies gold packets, and predicts
+                their locations using bounding boxes.
+            </p>
+
+        </div>
+
+
+        <div class="rtdetr-flow">
+
+            <div class="rtdetr-step">
+                <span>1</span>
+                <div>
+                    <strong>Input Image</strong>
+                    <small>Uploaded gold packet image</small>
+                </div>
+            </div>
+
+            <div class="rtdetr-line"></div>
+
+            <div class="rtdetr-step">
+                <span>2</span>
+                <div>
+                    <strong>Feature Extraction</strong>
+                    <small>Important image features are learned</small>
+                </div>
+            </div>
+
+            <div class="rtdetr-line"></div>
+
+            <div class="rtdetr-step">
+                <span>3</span>
+                <div>
+                    <strong>Transformer Encoder</strong>
+                    <small>Processes relationships between features</small>
+                </div>
+            </div>
+
+            <div class="rtdetr-line"></div>
+
+            <div class="rtdetr-step">
+                <span>4</span>
+                <div>
+                    <strong>Object Detection</strong>
+                    <small>Packets and their locations are predicted</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        Automatic Gold Packet Counter
+        <span>•</span>
+        MCA Mini Project 2026
+    </footer>
+    <!-- Image Preview + Detection JavaScript -->
+    <script>
+        const imageInput = document.getElementById("imageUpload");
+        const uploadedImage = document.getElementById("uploadedImage");
+        const uploadedPlaceholder = document.getElementById("uploadedPlaceholder");
+        const resultImage = document.getElementById("resultImage");
+        const resultPlaceholder = document.getElementById("resultPlaceholder");
+        const detectButton = document.getElementById("detectButton");
+        const packetCount = document.getElementById("packetCount");
+        const statusText = document.getElementById("statusText");
+        const allowedTypes = [ "image/jpeg", "image/png", "image/webp" ];
+        const maxFileSize = 10 * 1024 * 1024;
+        /* Show uploaded image */
+        imageInput.addEventListener("change", function () {
+            const file = imageInput.files[0];
+            if (!file) {
+                 return; 
+            }
+            
+            if (file) {
+                if (!allowedTypes.includes(file.type)) 
+                { 
+                    alert("Invalid file format!\n\nPlease upload a JPG, JPEG, PNG, or WEBP image.");
+                    imageInput.value = ""; 
+                    uploadedImage.style.display = "none"; 
+                    uploadedPlaceholder.style.display = "flex"; 
+                    statusText.textContent = "Please select a valid image"; 
+                    return;
+                } 
+                // Validate file size 
+                if (file.size > maxFileSize) 
+                { 
+                    alert("File is too large!\n\nMaximum allowed size is 10 MB."); 
+                    imageInput.value = ""; 
+                    uploadedImage.style.display = "none"; 
+                    uploadedPlaceholder.style.display = "flex"; 
+                    statusText.textContent = "File size exceeds 10 MB"; 
+                    return; 
+                }
+                const imageURL = URL.createObjectURL(file);
+                uploadedImage.src = imageURL;
+                uploadedImage.style.display = "block";
+                uploadedPlaceholder.style.display = "none";
+                packetCount.textContent = "0";
+                statusText.textContent = "Ready for detection";
+                // Clear previous result
+                resultImage.style.display = "none";
+                resultPlaceholder.style.display = "flex";
+            }
+        });
+        /* Detect packets */
+        detectButton.addEventListener("click", async function () {
+            const file = imageInput.files[0];
+            if (!file) {
+                alert("Please select an image first.");
+                return;
+            }
+            const formData = new FormData();
+            formData.append("image", file);
+            try {
+                detectButton.textContent = "Processing...";
+                detectButton.disabled = true;
+                statusText.textContent = "Detecting packets...";
+                const response = await fetch("/detect", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await response.json();
+                console.log(data);
+                // Show packet count
+                packetCount.textContent = data.count;
+                // Show detected image separately
+                resultImage.src = "/results/" + data.result_image;
+                resultImage.style.display = "block";
+                resultPlaceholder.style.display = "none";
+                statusText.textContent = "Detection completed";
+            } catch (error) {
+                console.error(error);
+                statusText.textContent = "Detection failed";
+                alert("Something went wrong.");
+            }
+            detectButton.textContent = "Detect Packets";
+            detectButton.disabled = false;
+        });
+    </script>
+</body>
+</html>

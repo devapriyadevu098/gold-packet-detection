@@ -1,0 +1,708 @@
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: #0d0f12;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.navbar {
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 8%;
+
+    background: #111318;
+    border-bottom: 1px solid #292c32;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d8a928;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    text-decoration: none;
+
+    color: #aaaeb7;
+
+    font-size: 15px;
+
+    border-radius: 7px;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.nav-links a:hover {
+    color: #d8a928;
+    background: #1b1e24;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.tagline {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+
+    color: #d8a928;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.description {
+    max-width: 650px;
+    margin: auto;
+
+    color: #9da2ad;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   UPLOAD SECTION
+   ========================================= */
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-card {
+    width: 600px;
+    max-width: 100%;
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #15171c;
+
+    border: 2px dashed #353942;
+    border-radius: 18px;
+}
+
+.upload-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    background: #24262d;
+
+    border-radius: 50%;
+
+    color: #d8a928;
+    font-size: 35px;
+}
+
+.upload-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.upload-card p {
+    color: #858a94;
+    margin-bottom: 20px;
+}
+
+.upload-button {
+    border: none;
+
+    background: #d8a928;
+    color: #111;
+
+    padding: 12px 28px;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.upload-button:hover {
+    background: #e6bb3b;
+}
+
+
+/* =========================================
+   DETECT BUTTON
+   ========================================= */
+
+.detect-button {
+    margin-top: 25px;
+    padding: 14px 45px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #d8a928;
+    color: #111;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.detect-button:hover {
+    background: #e6bb3b;
+    transform: translateY(-2px);
+}
+
+.detect-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.section-heading h2 {
+    color: #ffffff;
+
+    font-size: 38px;
+
+    margin: 10px 0 15px;
+}
+
+.section-heading p:not(.section-tag) {
+    color: #999;
+    line-height: 1.7;
+}
+
+.section-tag {
+    color: #d4af37;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   UPLOADED IMAGE SECTION
+   ========================================= */
+
+.uploaded-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.uploaded-image-card {
+    max-width: 850px;
+    min-height: 350px;
+
+    margin: 0 auto 30px;
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111111;
+
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+}
+
+#uploadedImage {
+    display: none;
+
+    max-width: 100%;
+    max-height: 450px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+#uploadedPlaceholder {
+    color: #777;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   DETECTION RESULT SECTION
+   ========================================= */
+
+.result-section {
+    margin-top: 100px;
+
+    padding: 90px 8% 70px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.result-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+.result-image-card {
+    min-height: 400px;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111111;
+
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+}
+
+#resultImage {
+    display: none;
+
+    max-width: 100%;
+    max-height: 450px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+#resultPlaceholder {
+    color: #777;
+    text-align: center;
+}
+
+
+/* =========================================
+   COUNT CARD
+   ========================================= */
+
+.count-card {
+    padding: 40px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #111111;
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 15px;
+}
+
+.count-label {
+    color: #d4af37;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.count {
+    color: #ffffff;
+
+    font-size: 70px;
+    line-height: 1;
+
+    margin: 10px 0;
+}
+
+.status {
+    color: #888;
+
+    font-size: 15px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+
+.how-it-works {
+    margin-top: 25px;
+
+    padding: 90px 8%;
+
+    background: #111318;
+
+    border-top: 1px solid #292c32;
+    border-bottom: 1px solid #292c32;
+}
+
+.workflow {
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.workflow-card {
+    min-height: 220px;
+
+    padding: 30px 25px;
+
+    background: #15171c;
+
+    border: 1px solid #292c32;
+    border-radius: 15px;
+
+    text-align: center;
+
+    transition: 0.25s ease;
+}
+
+.workflow-card:hover {
+    border-color: rgba(212, 175, 55, 0.45);
+    transform: translateY(-5px);
+}
+
+.workflow-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #24262d;
+
+    color: #d8a928;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+.workflow-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.workflow-card p {
+    color: #858a94;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.workflow-arrow {
+    color: #d8a928;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RT-DETR INFORMATION
+   ========================================= */
+
+.rtdetr-info {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    background: #15171c;
+
+    border: 1px solid #292c32;
+    border-radius: 18px;
+}
+
+.rtdetr-content h2 {
+    font-size: 34px;
+    margin: 10px 0 20px;
+}
+
+.rtdetr-content p:not(.section-tag) {
+    color: #9da2ad;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   RT-DETR FLOW
+   ========================================= */
+
+.rtdetr-flow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rtdetr-step {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 10px 0;
+}
+
+.rtdetr-step span {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #24262d;
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+
+    color: #d8a928;
+
+    font-weight: bold;
+}
+
+.rtdetr-step strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+.rtdetr-step small {
+    color: #777;
+    font-size: 13px;
+}
+
+.rtdetr-line {
+    width: 1px;
+    height: 25px;
+
+    margin-left: 20px;
+
+    background: #353942;
+}
+
+
+/* =========================================
+   IMAGE INPUT / PREVIEW
+   ========================================= */
+
+#previewImage {
+    display: none;
+
+    max-width: 100%;
+    max-height: 320px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+#imageInput {
+    display: none;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    border-top: 1px solid #292c32;
+    text-align: center;
+    padding: 30px;
+    color: #d8d8d8;   /* changed */
+    font-size: 13px;
+}
+
+footer span {
+    color: #d8a928;
+    margin: 0 8px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .result-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .result-image-card {
+        min-height: 300px;
+    }
+
+    .count-card {
+        min-height: 220px;
+    }
+
+    .workflow {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .workflow-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+    }
+
+    .rtdetr-info {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+
+        gap: 35px;
+    }
+}
